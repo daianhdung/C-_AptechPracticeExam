@@ -55,7 +55,7 @@ namespace Aptech_TH.Services.Imp
             {
                 throw new CustomException("Username not existed");
             }
-            bool passwordMatches = BCrypt.Net.BCrypt.Verify(Password, user.Password);
+            bool passwordMatches = BCrypt.Net.BCrypt.EnhancedVerify(Password, user.Password);
             if (!passwordMatches)
             {
                 throw new CustomException("Username or password is invalid");

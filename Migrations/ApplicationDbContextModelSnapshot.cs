@@ -23,8 +23,8 @@ namespace Aptech_TH.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Description")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -41,7 +41,7 @@ namespace Aptech_TH.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("TEXT");
 
                     b.Property<double>("TotalBill")
@@ -51,7 +51,6 @@ namespace Aptech_TH.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -68,10 +67,9 @@ namespace Aptech_TH.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("LoyaltyPoint")
+                    b.Property<int?>("LoyaltyPoint")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Password")

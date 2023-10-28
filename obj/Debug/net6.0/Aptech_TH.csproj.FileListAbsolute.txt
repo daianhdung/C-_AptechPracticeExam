@@ -49,3 +49,4 @@ D:\Aptech\C#\Aptech_TH\obj\Debug\net6.0\refint\Aptech_TH.dll
 D:\Aptech\C#\Aptech_TH\obj\Debug\net6.0\Aptech_TH.pdb
 D:\Aptech\C#\Aptech_TH\obj\Debug\net6.0\Aptech_TH.genruntimeconfig.cache
 D:\Aptech\C#\Aptech_TH\obj\Debug\net6.0\ref\Aptech_TH.dll
+D:\Aptech\C#\Aptech_TH\bin\Debug\net6.0\BCrypt.Net-Next.dll

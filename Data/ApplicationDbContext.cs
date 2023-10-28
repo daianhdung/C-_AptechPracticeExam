@@ -5,17 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using Aptech_TH.Entity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace Aptech_TH.Data
 {
     internal class ApplicationDbContext : DbContext
     {
         public string DbPath { get; set; }
+        //public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        //{
+        //    //var folder = Environment.SpecialFolder.LocalApplicationData;
+        //    //var path = Environment.GetFolderPath(folder);
+        //    //DbPath = System.IO.Path.Join(path, "consoleC2204L.db");
+        //}
+
         public ApplicationDbContext()
         {
-            //var folder = Environment.SpecialFolder.LocalApplicationData;
-            //var path = Environment.GetFolderPath(folder);
-            //DbPath = System.IO.Path.Join(path, "consoleC2204L.db");
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

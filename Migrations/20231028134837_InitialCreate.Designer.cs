@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Aptech_TH.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231028042437_InitialCreate")]
+    [Migration("20231028134837_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,8 +25,8 @@ namespace Aptech_TH.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Description")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -43,7 +43,7 @@ namespace Aptech_TH.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("TEXT");
 
                     b.Property<double>("TotalBill")
@@ -53,7 +53,6 @@ namespace Aptech_TH.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -70,10 +69,9 @@ namespace Aptech_TH.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("LoyaltyPoint")
+                    b.Property<int?>("LoyaltyPoint")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Password")
