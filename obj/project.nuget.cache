@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "nTTd9JdWUFo1pLSRh8k6gG2f0C6NDAK9jNLWaefynB2vDq3qMMA7j1m10DOzhM4TiJ/7qeP+P5/goPRblwT4Zg==",
+  "dgSpecHash": "sKKeGXiWdHzsDdVBRShLhJ5FNcSFVMLfmigEohhzF1uJ4UDQ0Q0yaMFiLEeNZHbAszA6lODK/VAe5Zxwi0q2mA==",
   "success": true,
   "projectFilePath": "D:\\Aptech\\C#\\Aptech_TH\\Aptech_TH.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Tuan\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Tuan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Tuan\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.0\\microsoft.data.sqlite.core.6.0.0.nupkg.sha512",
     "C:\\Users\\Tuan\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\microsoft.entityframeworkcore.6.0.0.nupkg.sha512",

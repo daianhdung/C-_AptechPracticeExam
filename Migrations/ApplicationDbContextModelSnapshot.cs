@@ -58,7 +58,7 @@ namespace Aptech_TH.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Transaction");
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("Aptech_TH.Entity.User", b =>
@@ -74,8 +74,16 @@ namespace Aptech_TH.Migrations
                     b.Property<int>("LoyaltyPoint")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("RoleId")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

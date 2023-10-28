@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Aptech_TH.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231027045709_InitialCreate")]
+    [Migration("20231028042437_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,7 +60,7 @@ namespace Aptech_TH.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Transaction");
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("Aptech_TH.Entity.User", b =>
@@ -76,8 +76,16 @@ namespace Aptech_TH.Migrations
                     b.Property<int>("LoyaltyPoint")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("RoleId")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

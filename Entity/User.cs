@@ -10,11 +10,13 @@ namespace Aptech_TH.Entity
 {
     internal class User
     {
-        public int Id { get; private set; }
-        public string FullName { get; private set; }
-        public int LoyaltyPoint { get; private set; }
-        public int RoleId { get; private set; }
-        public Role Role { get; private set; }
+        public int Id { get; set; }
+        public string FullName { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public int LoyaltyPoint { get; set; }
+        public int RoleId { get; set; }
+        public Role Role { get; set; }
         public List<Transaction> Transactions { get; } = new();
     }
 }
