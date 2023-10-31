@@ -9,6 +9,6 @@ namespace Aptech_TH.Services
 {
     internal interface TransactionService
     {
-        
+        Transaction createTransaction(Transaction transaction);
     }
 }

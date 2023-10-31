@@ -75,8 +75,7 @@ namespace Aptech_TH.Services.Imp
 
         public List<User> GetUsers()
         {
-
-            return db.Users.ToList();
+            return db.Users.Where(user => user.RoleId == 2).ToList();
         }
     }
 }

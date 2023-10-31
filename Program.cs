@@ -4,6 +4,7 @@ using Aptech_TH.Services;
 using Aptech_TH.Services.Imp;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Diagnostics;
 
 namespace Aptech_TH
 {
@@ -39,28 +40,40 @@ namespace Aptech_TH
                             User user = userService.CheckLoginUser(UserName, Password);
                             if (user.RoleId == 1)
                             {
-                                Console.WriteLine("1.Add Loyalty Points");
-                                Console.WriteLine("2. Print all user");
-                                Console.WriteLine("0. Log out");
-                                string optionRole = Console.ReadLine();
+                                Console.WriteLine("Login successfully, hello " + user.UserName);
                                 bool signOut = false;
                                 while (!signOut)
                                 {
+                                    Console.WriteLine("1. Add Loyalty Points");
+                                    Console.WriteLine("2. Print all user");
+                                    Console.WriteLine("0. Log out");
+                                    string optionRole = Console.ReadLine();
                                     switch (optionRole)
                                     {
                                         case "1":
                                             Console.WriteLine("Input username");
                                             string UserNameLoyalty = Console.ReadLine();
                                             User userLoyalty = userService.GetUserByUserName(UserNameLoyalty);
-                                            user.LoyaltyPoint = Console.Read();
-                                            userService.UpdateUser(user);
-                                            Console.WriteLine("Add loyalty point successfully");
+                                            Console.WriteLine("Input total payment");
+                                            string TotalPayment = Console.ReadLine();
+                                            Transaction transaction = new Transaction();
+                                            try
+                                            {
+
+                                            }catch(Exception ex)
+                                            {
+                                                Console.WriteLine(new StackTrace().ToString());
+                                            }
+                                            userLoyalty.LoyaltyPoint = Int32.Parse(TotalPayment) / 100000;
+                                            userService.UpdateUser(userLoyalty);
+                                            Console.WriteLine($"Add {userLoyalty.LoyaltyPoint} loyalty point to {userLoyalty.UserName} successfully");
                                             break;
                                         case "2":
                                             List<User> users = userService.GetUsers();
-                                            users.ForEach(item => Console.WriteLine(item));
+                                            users.ForEach(item => Console.WriteLine(item.ToString()));
                                             break;
                                         case "0":
+                                            Console.WriteLine("Log out successfully");
                                             signOut = true;
                                             break;
                                         default:
@@ -71,21 +84,22 @@ namespace Aptech_TH
                             }
                             else if (user.RoleId == 2)
                             {
-                                Console.WriteLine("1. Check Loyalty Point");
-                                Console.WriteLine("0. Log out");
-                                string optionRole = Console.ReadLine();
+
+                                Console.WriteLine("Login successfully, hello " + user.UserName);
                                 bool signOut = false;
                                 while (!signOut)
                                 {
+                                    Console.WriteLine("1. Check Loyalty Point");
+                                    Console.WriteLine("0. Log out");
+                                    string optionRole = Console.ReadLine();
                                     switch (optionRole)
                                     {
                                         case "1":
-                                            Console.WriteLine("Input username");
-                                            string UserNameLoyalty = Console.ReadLine();
-                                            User UserLoyalty = userService.GetUserByUserName(UserNameLoyalty);
-                                            Console.WriteLine(UserLoyalty);
+                                            User UserLoyalty = userService.GetUserByUserName(user.UserName);
+                                            Console.WriteLine(UserLoyalty.ToString());
                                             break;
                                         case "0":
+                                            Console.WriteLine("Log out successfully");
                                             signOut = true;
                                             break;
                                         default:
@@ -110,6 +124,7 @@ namespace Aptech_TH
                         NewUser.Password = PasswordRegister;
                         NewUser.RoleId = 2;
                         userService.CreateUser(NewUser);
+                        Console.WriteLine("Sign up successfully! Please log in");
                         break;
                     default:
                         Console.WriteLine("Invalid option");

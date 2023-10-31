@@ -6,6 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Aptech_TH.Entity
 {
@@ -19,5 +20,11 @@ namespace Aptech_TH.Entity
         public int RoleId { get; set; }
         public Role Role { get; set; }
         public List<Transaction> Transactions { get; } = new();
+
+
+        public override string ToString()
+        {
+            return $"Username: {this.UserName}, Loyalty Point: {(this.LoyaltyPoint != null ? this.LoyaltyPoint : 0)}";
+        }
     }
 }
